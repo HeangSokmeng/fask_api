@@ -4,3 +4,4 @@ source venv/bin/activate   # On Windows use: venv\Scripts\activate
 
 # Install required packages
 pip install fastapi uvicorn psycopg2-binary sqlalchemy pydantic
+pip install python-jose[cryptography] passlib[bcrypt]

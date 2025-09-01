@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 
 from pydantic import BaseModel
@@ -5,7 +6,7 @@ from pydantic import BaseModel
 
 class CategoryBase(BaseModel):
     name: str
-    description: Optional[str] = None  # <- Fix here
+    description: Optional[str] = None
 
 
 class CategoryCreate(CategoryBase):
@@ -14,6 +15,8 @@ class CategoryCreate(CategoryBase):
 
 class CategoryResponse(CategoryBase):
     id: int
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
         orm_mode = True
